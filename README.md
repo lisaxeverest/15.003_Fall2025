@@ -13,6 +13,6 @@ Please reach out to us if you have any questions!
 
 Your teaching team,
 
-Léonard Boussioux (leobix@mit.edu), Kim Villalobos Carballo (kimvc@mit.edu), Yu Ma (midsumer@mit.edu)
+Kim Villalobos Carballo (kimvc@mit.edu), Cynthia Zeng (czeng12@mit.edu), Sean Lo (seanlo@mit.edu)
 
 
