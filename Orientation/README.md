@@ -4,7 +4,7 @@ This is a **long** preassignment that involves lots of software installation and
 
 **If You Encounter Problems**
 1. If you receive an error message, Google it. 
-2. If you tried that, write an email to `kimvc@mit.edu` and `midsumer@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.  
+2. If you tried that, write an email to `kimvc@mit.edu` and `czeng12@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.  
 
 
 # 1. Data Analysis: R and RStudio
