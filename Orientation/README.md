@@ -41,7 +41,7 @@ On the top left corner of R Studio, Click on File -> Open File, and navigate to 
 
 # 2. Optimization: Julia and JuMP
 
-**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email `kimvc@mit.edu` and `midsumer@mit.edu` and include as much information as possible so that we can assist you.
+**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email `kimvc@mit.edu` and `czeng12@mit.edu` and include as much information as possible so that we can assist you.
 
 *Note that you will need to be connected to the MIT network to activate the Gurobi installation, but the other steps can be completed from any location.* 
 
