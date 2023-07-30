@@ -195,7 +195,7 @@ Once you have completed all the steps above, copy and paste the following code i
 
 ```julia
 using JuMP, Gurobi
-model = Model(with_optimizer(Gurobi.Optimizer, Presolve=0, OutputFlag=0)) # or Cbc.Optimizer
+model = Model(optimizer_with_attributes(Gurobi.Optimizer, "Presolve" => 0, "OutputFlag" => 0)) # or Cbc.Optimizer
 @variable(model,x>=0)
 @objective(model, Min, x)
 optimize!(model)
