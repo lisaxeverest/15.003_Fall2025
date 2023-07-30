@@ -132,22 +132,22 @@ julia> Pkg.add("Gurobi")
 If you see an error message during this installation, it could be because you did not install/activate Gurobi properly. Please read through the "Installation" information [`here`](https://github.com/JuliaOpt/Gurobi.jl) and see the instructions for setting the GUROBI_HOME environment variable in Julia;
 ```julia
 # On Windows, this might be
-ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi952\\win64"
+ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi1002\\win64"
 # ... or perhaps ...
-ENV["GUROBI_HOME"] = "C:\\gurobi952\\win64"
+ENV["GUROBI_HOME"] = "C:\\gurobi1002\\win64"
 using Pkg
 Pkg.add("Gurobi")
 Pkg.build("Gurobi")
 
 # On Mac, this might be
-ENV["GUROBI_HOME"] = "/Library/gurobi952/mac64"
+ENV["GUROBI_HOME"] = "/Library/gurobi1002/mac64"
 using Pkg
 Pkg.add("Gurobi")
 Pkg.build("Gurobi")
 ```
 
-**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 9.5.2. If you have
-a different version, your path may differ (e.g. Gurobi 9.5.2 -> replace gurobi950 with gurobi952). 
+**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 10.0.2. If you have
+a different version, your path may differ (e.g. Gurobi 9.5.2 -> replace gurobi1002 with gurobi952). 
 If this doesn't work, also check which folder you installed Gurobi in, and update the path accordingly if necessary.**
 
 
