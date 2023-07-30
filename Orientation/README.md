@@ -107,7 +107,7 @@ julia> notebook()
 install Jupyter via Conda, y/n? [y]: 
 ```
 
-If this is successful, a Jupyter tab will open in the default browser on your computer. Click “New” in the top right corner to make a new notebook (if a menu appears, select Julia 1.7.3). A new tab will open with a blank Jupyter notebook.
+If this is successful, a Jupyter tab will open in the default browser on your computer. Click “New” in the top right corner to make a new notebook (if a menu appears, select Julia 1.9.2). A new tab will open with a blank Jupyter notebook.
 
 
 ## Install Gurobi
