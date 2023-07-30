@@ -116,7 +116,7 @@ If this is successful, a Jupyter tab will open in the default browser on your co
 Gurobi is a commercial optimization solver that we will use to solve optimization problems in class. Here are the basic steps that you will need to follow to install Gurobi,: 
 
 1. Register for a Gurobi account on the [gurobi website](https://www.gurobi.com). Use your @mit.edu email address, and select the Academic option (not the commercial option).
-2. Download the Gurobi Optimizer software [`here`](https://www.gurobi.com/downloads/) and install. You might need to log in to the page first, the current stable version is Gurobi 9.5.2.
+2. Download the Gurobi Optimizer software [`here`](https://www.gurobi.com/downloads/) and install. You might need to log in to the page first, the current stable version is Gurobi 10.0.2.
 3. Create and download an Academic License to use the software [`here`](https://www.gurobi.com/downloads/end-user-license-agreement-academic/).
 4. Use the license file to activate the Gurobi software that you installed. Follow the instructions on the license page to run the grbgetkey command. **Note that you must be connected to the MIT SECURE network to do this.** If you are not on campus, please move on to the next section (IJulia) and come back to this step later.
 
