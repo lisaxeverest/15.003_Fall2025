@@ -33,7 +33,7 @@ If you encounter any error messages that you are unable to handle, please email 
 
 ## Introduction to R + Basic Syntax
 
-Donwload the Pre-Assignment folder from Canvas in 15.003_FA22/Files/Pre-Assignment, it should contain a data folder with wine.csv as well as R_Basics.R. 
+Donwload the Pre-Assignment folder from Canvas in 15.003_FA23/Files/Pre-Assignment, it should contain a data folder with wine.csv as well as R_Basics.R. 
 
 On the top left corner of R Studio, Click on File -> Open File, and navigate to where you have downloaded the folder to open the R_Basics.R file. You will see a new window open up on the top left corner with some scripts already written for you. Follow along the instructions in the comment and work through the basic syntax. 
 
