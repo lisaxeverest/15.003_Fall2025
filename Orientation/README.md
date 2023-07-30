@@ -3,19 +3,19 @@
 This is a **long** preassignment that involves lots of software installation and testing. Please leave a total of at least **2 hours** to complete this preassignment. That may seem like a long time, but once you've done it you'll have a powerful suite of software that you can use through your career at MIT and beyond. 
 
 **If You Encounter Problems**
-1. If you receive an error message, Google it. 
-2. If you tried that, write an email to `kimvc@mit.edu` and `czeng12@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.  
+1. If you receive an error message, first try Googling it!
+2. If you tried that and couldn't solve it, write an email to `kimvc@mit.edu` and `czeng12@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.  
 
 
 # 1. Data Analysis: R and RStudio
 
 ## Install R and RStudio
 
-**We are assuming that you have the latest version of R (4.2.1) installed.** You may need to update your installation if you have an older version.
+**We are assuming that you have the latest version of R (4.3.1 unless you have a macOS 10.13 laptop, in which case you need 4.2.3) installed.** You may need to update your installation if you have an older version.
  
 1. **Install R**: Navigate to [`http://cran.wustl.edu`](http://cran.wustl.edu) and follow the instructions for your operating system. 
-2. **Download RStudio**: Navigate to [`https://www.rstudio.com/products/rstudio/download/`](https://www.rstudio.com/products/rstudio/download/) and download RStudio Desktop with an Open Source License. 
-3. **Test Your Installation**: Open RStudio and type 1+2 into the Console window, and press "Enter." If you see the expected result, you are ready to move on. 
+2. **Download RStudio**: Navigate to [`https://www.rstudio.com/products/rstudio/download/`](https://www.rstudio.com/products/rstudio/download/) and download RStudio Desktop with an Open Source License (For macOS 10.13 users, click on previous versions and then go to the installers for the 2022.07.2 version).
+3. **Test Your Installation**: Open RStudio and type 1+2 into the Console window, and press "Enter." If you see the expected result, you are ready to move on! 
 
 ## Install Packages
 
