@@ -154,7 +154,7 @@ If this doesn't work, also check which folder you installed Gurobi in, and updat
 If the Gurobi package is successfully installed in Julia, run the following lines, you might see a warning of Academic license - for non-commercial use only - expires 2023-08-11, this is normal:
 ```julia
 julia> using JuMP, Gurobi
-julia> model = Model(with_optimizer(Gurobi.Optimizer, Presolve=0, OutputFlag=0))
+julia> model = Model(optimizer_with_attributes(Gurobi.Optimizer, "Presolve" => 0, "OutputFlag" => 0))
 ```
 
 You should see this output:
@@ -174,7 +174,7 @@ Also install the Cbc package, which will be the backend mixed-integer optimizati
 ```julia
 julia> Pkg.add("Cbc")
 julia> using JuMP, Cbc
-julia> model = Model(with_optimizer(Cbc.Optimizer, Presolve=0, OutputFlag=0))
+julia> model = Model(optimizer_with_attributes(Cbc.Optimizer, "Presolve" => 0, "OutputFlag" => 0))
 ```
 
 You should see this output: 
