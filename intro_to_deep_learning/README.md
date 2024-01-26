@@ -16,4 +16,4 @@ Please complete this [pre-assignment](https://colab.research.google.com/drive/1d
 
 ### Questions?
 
-Please email Kimberly Villalobos Carballo (kimvc@mit.edu) and Léonard Boussioux (leobix@mit.edu) for any questions about this session :) 
+Please email Kimberly Villalobos Carballo (kimvc@mit.edu) and Gabriel Afriat (afriatg@mit.edu) for any questions about this session :) 
