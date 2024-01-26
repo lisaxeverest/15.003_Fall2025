@@ -17,7 +17,7 @@ See you on Tuesday!
 
 ### Questions?
 
-Please email Léonard at leobix@mit.edu for any questions about this session.
+Please email Gabriel (afriatg@mit.edu) or Kim (kimvc@mit.edu) for any questions about this session.
 
 ### Homework
 
