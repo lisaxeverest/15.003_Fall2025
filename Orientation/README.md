@@ -1,10 +1,10 @@
-# Orientation Preassignment (August 23-24)
+# Orientation Preassignment (August 23, 24, 29)
 
 This is a **long** preassignment that involves lots of software installation and testing. Please leave a total of at least **2 hours** to complete this preassignment. That may seem like a long time, but once you've done it you'll have a powerful suite of software that you can use through your career at MIT and beyond. 
 
 **If You Encounter Problems**
-1. If you receive an error message, first try Googling it!
-2. If you tried that and couldn't solve it, write an email to `kimvc@mit.edu` and `czeng12@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.  
+1. If you receive an error message, first try Googling it, or ChatGPU, or ask your classmates!
+2. If you tried that and couldn't solve it, write an email to `midsumer@mit.edu`,  `vasstou@mit.edu`, and `seanlo@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.  
 
 
 # 1. Data Analysis: R and RStudio
@@ -33,7 +33,7 @@ If you encounter any error messages that you are unable to handle, please email 
 
 ## Introduction to R + Basic Syntax
 
-Donwload the Pre-Assignment folder from Canvas in 15.003_FA23/Files/Pre-Assignment, it should contain a data folder with wine.csv as well as R_Basics.R. 
+Donwload the Pre-Assignment folder from Canvas in 15.003_FA24/Files/Pre-Assignment, it should contain a data folder with wine.csv as well as R_Basics.R. 
 
 On the top left corner of R Studio, Click on File -> Open File, and navigate to where you have downloaded the folder to open the R_Basics.R file. You will see a new window open up on the top left corner with some scripts already written for you. Follow along the instructions in the comment and work through the basic syntax. 
 
@@ -41,7 +41,7 @@ On the top left corner of R Studio, Click on File -> Open File, and navigate to 
 
 # 2. Optimization: Julia and JuMP
 
-**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email `kimvc@mit.edu` and `czeng12@mit.edu` and include as much information as possible so that we can assist you.
+**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email `midsumer@mit.edu` and `seanlo@mit.edu` and include as much information as possible so that we can assist you.
 
 *Note that you will need to be connected to the MIT network to activate the Gurobi installation, but the other steps can be completed from any location.* 
 
