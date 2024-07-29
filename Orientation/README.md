@@ -1,4 +1,4 @@
-# Orientation Preassignment (August 23, 24, 29)
+# Orientation Preassignment (August 21, 22, 27)
 
 This is a **long** preassignment that involves lots of software installation and testing. Please leave a total of at least **2 hours** to complete this preassignment. That may seem like a long time, but once you've done it you'll have a powerful suite of software that you can use through your career at MIT and beyond. 
 
@@ -48,7 +48,7 @@ On the top left corner of R Studio, Click on File -> Open File, and navigate to 
 ## Install Julia
 
 Julia is programming language developed at MIT. To install Julia, go to [`https://julialang.org/downloads/`](https://julialang.org/downloads/) and download the appropriate version for your operating system. See [`here`](https://julialang.org/downloads/platform/) for more detailed instructions.
-We will assume that everyone has installed the most recent version of Julia (v1.9.2). If you have an older version installed, we recommend that you install the newer version as well.
+We will assume that everyone has installed the most recent version of Julia (v1.10.4). If you have an older version installed, we recommend that you install the newer version as well.
 To confirm that Julia is installed, open a Julia window by clicking on the Julia icon in your applications menu (note: mac users should make sure Julia is copied into their applications folder). You should see a prompt at the bottom of the new window that looks like this:
 
 ```julia
@@ -107,7 +107,7 @@ julia> notebook()
 install Jupyter via Conda, y/n? [y]: 
 ```
 
-If this is successful, a Jupyter tab will open in the default browser on your computer. Click “New” in the top right corner to make a new notebook (if a menu appears, select Julia 1.9.2). A new tab will open with a blank Jupyter notebook.
+If this is successful, a Jupyter tab will open in the default browser on your computer. Click “New” in the top right corner to make a new notebook (if a menu appears, select Julia 1.10.4). A new tab will open with a blank Jupyter notebook.
 
 
 ## Install Gurobi
@@ -116,7 +116,7 @@ If this is successful, a Jupyter tab will open in the default browser on your co
 Gurobi is a commercial optimization solver that we will use to solve optimization problems in class. Here are the basic steps that you will need to follow to install Gurobi,: 
 
 1. Register for a Gurobi account on the [gurobi website](https://www.gurobi.com). Use your @mit.edu email address, and select the Academic option (not the commercial option).
-2. Download the Gurobi Optimizer software [`here`](https://www.gurobi.com/downloads/) and install. You might need to log in to the page first, the current stable version is Gurobi 10.0.2.
+2. Download the Gurobi Optimizer software [`here`](https://www.gurobi.com/downloads/) and install. You might need to log in to the page first, the current stable version is Gurobi 11.0.3.
 3. Create and download an Academic License to use the software [`here`](https://www.gurobi.com/downloads/end-user-license-agreement-academic/).
 4. Use the license file to activate the Gurobi software that you installed. Follow the instructions on the license page to run the grbgetkey command. **Note that you must be connected to the MIT SECURE network to do this.** If you are not on campus, please move on to the next section (IJulia) and come back to this step later.
 
@@ -132,26 +132,26 @@ julia> Pkg.add("Gurobi")
 If you see an error message during this installation, it could be because you did not install/activate Gurobi properly. Please read through the "Installation" information [`here`](https://github.com/JuliaOpt/Gurobi.jl) and see the instructions for setting the GUROBI_HOME environment variable in Julia;
 ```julia
 # On Windows, this might be
-ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi1002\\win64"
+ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi1103\\win64"
 # ... or perhaps ...
-ENV["GUROBI_HOME"] = "C:\\gurobi1002\\win64"
+ENV["GUROBI_HOME"] = "C:\\gurobi1103\\win64"
 using Pkg
 Pkg.add("Gurobi")
 Pkg.build("Gurobi")
 
 # On Mac, this might be
-ENV["GUROBI_HOME"] = "/Library/gurobi1002/mac64"
+ENV["GUROBI_HOME"] = "/Library/gurobi1103/mac64"
 using Pkg
 Pkg.add("Gurobi")
 Pkg.build("Gurobi")
 ```
 
-**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 10.0.2. If you have
-a different version, your path may differ (e.g. Gurobi 9.5.2 -> replace gurobi1002 with gurobi952). 
+**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 11.0.3. If you have
+a different version, your path may differ (e.g. Gurobi 9.5.2 -> replace gurobi1103 with gurobi952). 
 If this doesn't work, also check which folder you installed Gurobi in, and update the path accordingly if necessary.**
 
 
-If the Gurobi package is successfully installed in Julia, run the following lines, you might see a warning of Academic license - for non-commercial use only - expires 2023-08-11, this is normal:
+If the Gurobi package is successfully installed in Julia, run the following lines, you might see a warning of Academic license - for non-commercial use only - expires 2025-08-11, this is normal:
 ```julia
 julia> using JuMP, Gurobi
 julia> model = Model(optimizer_with_attributes(Gurobi.Optimizer, "Presolve" => 0, "OutputFlag" => 0))
