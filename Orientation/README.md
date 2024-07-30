@@ -41,17 +41,26 @@ On the top left corner of R Studio, Click on File -> Open File, and navigate to 
 
 # 2. Optimization: Julia and JuMP
 
-**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email `midsumer@mit.edu` and `seanlo@mit.edu` and include as much information as possible so that we can assist you.
+**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email Sean (`seanlo@mit.edu`) and Yu (`midsumer@mit.edu`), and include as much information as possible so that we can assist you.
 
 *Note that you will need to be connected to the MIT network to activate the Gurobi installation, but the other steps can be completed from any location.* 
 
 ## Install Julia
 
-Julia is programming language developed at MIT. To install Julia, go to [`https://julialang.org/downloads/`](https://julialang.org/downloads/) and download the appropriate version for your operating system. See [`here`](https://julialang.org/downloads/platform/) for more detailed instructions.
-We will assume that everyone has installed the most recent version of Julia (v1.10.4). If you have an older version installed, we recommend that you install the newer version as well.
-To confirm that Julia is installed, open a Julia window by clicking on the Julia icon in your applications menu (note: mac users should make sure Julia is copied into their applications folder). You should see a prompt at the bottom of the new window that looks like this:
+Julia is programming language developed at MIT. To install Julia, go to [`https://julialang.org/downloads/`](https://julialang.org/downloads/) and download the appropriate version for your operating system. We recommend installing the Juliaup installation manager, which will automaticall install Julia and allow you to maintain multiple versions of Julia on the same device. See [`here`](https://julialang.org/downloads/platform/) for more detailed instructions.
 
-```julia
+We will assume that everyone has installed the most recent version of Julia (v1.10.4). If you have an older version installed, we recommend that you install the newer version as well.
+To confirm that Julia is installed, open a Julia window by either running `julia` in the terminal or clicking on the Julia icon in your applications menu. You should see a prompt at the bottom of the new window that looks like this:
+
+```
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.10.4 (2024-06-04)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
 julia>
 ```
 
@@ -72,14 +81,14 @@ julia> Pkg.add("JuMP")
 
 This might take quite a while to finish, so don’t worry if it looks like nothing is happening in the Julia window. You will know that the process is complete when you see the command prompt (julia>) appear at the bottom of your screen.
 
-To test if the package is installed correctly, run the following commands
+To test if the package is installed correctly, run the following commands:
 ```julia
 julia> using JuMP
-julia> m = Model()
+julia> model = Model()
 ```
-You should see the output below
+You should see the output below:
 
-```julia
+```
 A JuMP Model
 Feasibility problem with:
 Variables: 0
@@ -115,51 +124,39 @@ If this is successful, a Jupyter tab will open in the default browser on your co
 
 Gurobi is a commercial optimization solver that we will use to solve optimization problems in class. Here are the basic steps that you will need to follow to install Gurobi,: 
 
-1. Register for a Gurobi account on the [gurobi website](https://www.gurobi.com). Use your @mit.edu email address, and select the Academic option (not the commercial option).
+1. Register for a Gurobi account on the [Gurobi website](https://www.gurobi.com). Use your @mit.edu email address, and select the Academic option (not the commercial option).
 2. Download the Gurobi Optimizer software [`here`](https://www.gurobi.com/downloads/) and install. You might need to log in to the page first, the current stable version is Gurobi 11.0.3.
 3. Create and download an Academic License to use the software [`here`](https://www.gurobi.com/downloads/end-user-license-agreement-academic/).
-4. Use the license file to activate the Gurobi software that you installed. Follow the instructions on the license page to run the grbgetkey command. **Note that you must be connected to the MIT SECURE network to do this.** If you are not on campus, please move on to the next section (IJulia) and come back to this step later.
+4. Use the license file to activate the Gurobi software that you installed. Follow the instructions on the license page to run the `grbgetkey` command. **Note that you must be connected to the MIT SECURE network to do this.**
 
 A summary of the Gurobi installation/activation process is available [`here`](https://www.gurobi.com/academia/academic-program-and-licenses/) and detailed installation instructions are available [`here`](https://www.gurobi.com/documentation/quickstart.html). If you get stuck trying to follow these instructions, please email us for assistance.
 
-After installing Gurobi, we need to add a Julia package called "Gurobi" that allows Julia to communicate with the Gurobi software. Run the following lines in your Julia window:
+After installing Gurobi, we need to add a Julia package called `Gurobi.jl` that allows Julia to communicate with the Gurobi software. Run the following lines in your Julia window:
 ```julia
 julia> using Pkg
 julia> Pkg.add("Gurobi")
 ```
-
-###### Gurobi Error in Julia
-If you see an error message during this installation, it could be because you did not install/activate Gurobi properly. Please read through the "Installation" information [`here`](https://github.com/JuliaOpt/Gurobi.jl) and see the instructions for setting the GUROBI_HOME environment variable in Julia;
-```julia
-# On Windows, this might be
-ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi1103\\win64"
-# ... or perhaps ...
-ENV["GUROBI_HOME"] = "C:\\gurobi1103\\win64"
-using Pkg
-Pkg.add("Gurobi")
-Pkg.build("Gurobi")
-
-# On Mac, this might be
-ENV["GUROBI_HOME"] = "/Library/gurobi1103/mac64"
-using Pkg
-Pkg.add("Gurobi")
-Pkg.build("Gurobi")
+You should see something similar to the following. Note that `Gurobi_jll` (binaries for Gurobi) is automatically added to the current Julia version:
+```
+   Resolving package versions...
+    Updating `~/.julia/environments/v1.10/Project.toml`
+  [2e9cd046] + Gurobi v1.3.0
+    Updating `~/.julia/environments/v1.10/Manifest.toml`
+  [2e9cd046] + Gurobi v1.3.0
+  [c018c7e6] + Gurobi_jll v11.0.2+2 
 ```
 
-**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 11.0.3. If you have
-a different version, your path may differ (e.g. Gurobi 9.5.2 -> replace gurobi1103 with gurobi952). 
-If this doesn't work, also check which folder you installed Gurobi in, and update the path accordingly if necessary.**
-
-
-If the Gurobi package is successfully installed in Julia, run the following lines, you might see a warning of Academic license - for non-commercial use only - expires 2025-08-11, this is normal:
+If the Gurobi package is successfully installed in Julia, run the following lines:
 ```julia
 julia> using JuMP, Gurobi
-julia> model = Model(optimizer_with_attributes(Gurobi.Optimizer, "Presolve" => 0, "OutputFlag" => 0))
+julia> model = Model(Gurobi.Optimizer)
 ```
 
 You should see this output:
 
-```julia
+```
+Set parameter Username
+Academic license - for non-commercial use only - expires 2025-XX-XX
 A JuMP Model
 Feasibility problem with:
 Variables: 0
@@ -167,14 +164,37 @@ Model mode: AUTOMATIC
 CachingOptimizer state: EMPTY_OPTIMIZER
 Solver name: Gurobi
 ```
-#### Alternative to Gurobi
-If you are unable to activate your Gurobi license (i.e. if you are not yet on campus), you can use an open-source solver as a temporary solution. 
 
-Also install the Cbc package, which will be the backend mixed-integer optimization solver for our optimization problems.
+
+### Optional: Gurobi Error in Julia
+If you see an error message during this installation, you can try a [manual install](https://github.com/jump-dev/Gurobi.jl?tab=readme-ov-file#manual-installation) of Gurobi (without installing `Gurobi_jll`):
 ```julia
-julia> Pkg.add("Cbc")
-julia> using JuMP, Cbc
-julia> model = Model(optimizer_with_attributes(Cbc.Optimizer, "Presolve" => 0, "OutputFlag" => 0))
+# On Windows, this might be
+ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi1103\\win64"
+# ... or perhaps ...
+ENV["GUROBI_HOME"] = "C:\\gurobi1103\\win64"
+# On Mac, this might be
+ENV["GUROBI_HOME"] = "/Library/gurobi1103/macos_universal2"
+
+# Opt-out of using Gurobi_jll
+ENV["GUROBI_JL_USE_GUROBI_JLL"] = "false"
+
+import Pkg
+Pkg.add("Gurobi")
+Pkg.build("Gurobi")
+```
+
+**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 11.0.3. If you have
+a different version, your path may differ (e.g. for Gurobi 10.0.3, replace `gurobi1103` with `gurobi1003`). 
+If this doesn't work, also check which folder you installed Gurobi in, and update the path accordingly if necessary.**
+
+
+### Optional: Alternative to Gurobi
+If you are unable to activate your Gurobi license (i.e. if you are not yet on campus), you can use an open-source solver as a temporary solution. See [here](https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers) for a list of possible solvers; we will proceed with the open-source solver `HiGHS`. This will be the backend mixed-integer optimization solver for our optimization problems.
+
+```julia
+julia> using JuMP, HiGHS
+julia> model = Model(HiGHS.Optimizer)
 ```
 
 You should see this output: 
@@ -184,7 +204,7 @@ Feasibility problem with:
 Variables: 0
 Model mode: AUTOMATIC
 CachingOptimizer state: EMPTY_OPTIMIZER
-Solver name: COIN Branch-and-Cut (Cbc)
+Solver name: HiGHS
 ```
 
 
@@ -194,22 +214,56 @@ Solver name: COIN Branch-and-Cut (Cbc)
 Once you have completed all the steps above, copy and paste the following code into a new Jupyter notebook (next to the "In []:" prompt)
 
 ```julia
-using JuMP, Gurobi
-model = Model(optimizer_with_attributes(Gurobi.Optimizer, "Presolve" => 0, "OutputFlag" => 0)) # or Cbc.Optimizer
-@variable(model,x>=0)
+using JuMP, Gurobi # or using JuMP, HiGHS
+model = Model(Gurobi.Optimizer) # or model = Model(HiGHS.Optimizer)
+@variable(model, x >= 0)
 @objective(model, Min, x)
 optimize!(model)
-print("The answer is ",JuMP.value(x))
 ```
 
-Now, click the "Run" button to run this code. You should see this output below:
+Now, click the "Run" button to run this code. You should see output similar to the below (for Gurobi):
 
-```julia
-The answer is 0.0
+```
+Set parameter Username
+Academic license - for non-commercial use only - expires 2025-XX-XX
+Gurobi Optimizer version 11.0.2 build v11.0.2rc0 (mac64[arm] - Darwin 23.5.0 23F79)
+
+CPU model: Apple M2 Pro
+Thread count: 12 physical cores, 12 logical processors, using up to 12 threads
+
+Optimize a model with 0 rows, 1 columns and 0 nonzeros
+Model fingerprint: 0x84abb838
+Coefficient statistics:
+  Matrix range     [0e+00, 0e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [0e+00, 0e+00]
+Presolve removed 0 rows and 1 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  0.000000000e+00
+
+User-callback calls 23, time in user-callback 0.00 sec
 ```
 
-If you see this output, everything is working correctly. If you see errors, one of the steps above may be incomplete. If you don't see any output, make sure that you have selected the notebook cell where you paste the code and try to run it again. 
+Alternatively (for HiGHS):
+```
+Running HiGHS 1.7.1 (git hash: 43329e528): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Cost   [1e+00, 1e+00]
+  Bound  [0e+00, 0e+00]
+Solving LP without presolve, or with basis, or unconstrained
+Solving an unconstrained LP with 1 columns
+Model   status      : Optimal
+Objective value     :  0.0000000000e+00
+HiGHS run time      :          0.00
+```
 
+We will go through what this printed output means, but if you see something similar, everything is working correctly! If you see errors, one of the steps above may be incomplete. Feel free to email us if you have installation issues.
 
 # 3. Version Control: Git and GitHub
 
