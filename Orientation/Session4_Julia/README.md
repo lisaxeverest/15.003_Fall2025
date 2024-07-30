@@ -1,6 +1,6 @@
 In this session, we will introduce mixed-integer optimization using Julia/JuMP. We will implement optimization models using the programming language Julia and the JuMP library. Julia is a "high-level, high-performance dynamic programming language for technical computing", and JuMP is a library that allows us to easily formulate and solve optimization problems.
 
-Before this session, make sure you have completed the orientation preassignment. Please email `midsumer@mit.edu` if you run into any issues.
+Before this session, make sure you have completed the orientation preassignment. Please email Sean (`seanlo@mit.edu`) and Yu (`midsumer@mit.edu`) if you run into any issues.
 
 ### Additional Resources
 - [Julia 1.0 Cheatsheet](https://juliadocs.github.io/Julia-Cheat-Sheet/) (syntax; basic operations)
