@@ -1,47 +1,15 @@
-# Orientation Preassignment (August 21, 22, 27)
+# Orientation Preassignment (August 20, 21, 26)
 
 This is a **long** preassignment that involves lots of software installation and testing. Please leave a total of at least **2 hours** to complete this preassignment. That may seem like a long time, but once you've done it you'll have a powerful suite of software that you can use through your career at MIT and beyond. 
 
 **If You Encounter Problems**
 1. If you receive an error message, first try Googling it, or ChatGPT, or ask your classmates!
-2. If you tried that and couldn't solve it, write an email to `midsumer@mit.edu`,  `vasstou@mit.edu`, and `seanlo@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.  
+2. If you tried that and couldn't solve it, write an email to `leverest@mit.edu` and `seanlo@mit.edu` describing the problem in as much detail as possible, preferably including screenshots.
 
 
-# 1. Data Analysis: R and RStudio
+# 1. Optimization: Julia and JuMP
 
-## Install R and RStudio
-
-**We are assuming that you have the latest version of R (4.4.1 unless you have a macOS 10.13 laptop, in which case you need 4.2.3) installed.** You may need to update your installation if you have an older version.
- 
-1. **Install R**: Navigate to [`http://cran.wustl.edu`](http://cran.wustl.edu) and follow the instructions for your operating system. 
-2. **Download RStudio**: Navigate to [`https://www.rstudio.com/products/rstudio/download/`](https://www.rstudio.com/products/rstudio/download/) and download RStudio Desktop with an Open Source License (For macOS 10.13 users, click on previous versions and then go to the installers for the 2022.07.2 version).
-3. **Test Your Installation**: Open RStudio and type 1+2 into the Console window, and press "Enter." If you see the expected result, you are ready to move on! 
-
-## Install Packages
-
-In the RStudio console, type 
-```R
-pkgs <- c('tidyverse')
-install.packages(pkgs)
-```
-Once the installation is complete, try to load the package
-```R
-library(tidyverse)
-```
-If you encounter any error messages that you are unable to handle, please email us. 
-
-
-## Introduction to R + Basic Syntax
-
-Donwload the Pre-Assignment folder from Canvas in 15.003_FA24/Files/Pre-Assignment, it should contain a data folder with wine.csv as well as R_Basics.R. 
-
-On the top left corner of R Studio, Click on File -> Open File, and navigate to where you have downloaded the folder to open the R_Basics.R file. You will see a new window open up on the top left corner with some scripts already written for you. Follow along the instructions in the comment and work through the basic syntax. 
-
-
-
-# 2. Optimization: Julia and JuMP
-
-**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email Sean (`seanlo@mit.edu`) and Yu (`midsumer@mit.edu`), and include as much information as possible so that we can assist you.
+**Please try to complete the steps below before the first day of class.**  We will only be using Julia and Gurobi on the second day, but we have very limited time in class and we will not be able to help you with installation problems during the teaching time. If you have difficulties with the installations below, please email Sean (`seanlo@mit.edu`) and include as much information as possible so that we can assist you.
 
 *Note that you will need to be connected to the MIT network to activate the Gurobi installation, but the other steps can be completed from any location.* 
 
@@ -49,7 +17,7 @@ On the top left corner of R Studio, Click on File -> Open File, and navigate to 
 
 Julia is programming language developed at MIT. To install Julia, go to [`https://julialang.org/downloads/`](https://julialang.org/downloads/) and download the appropriate version for your operating system. We recommend installing the Juliaup installation manager, which will automaticall install Julia and allow you to maintain multiple versions of Julia on the same device. See [`here`](https://julialang.org/downloads/platform/) for more detailed instructions.
 
-We will assume that everyone has installed the most recent version of Julia (v1.10.4). If you have an older version installed, we recommend that you install the newer version as well.
+We will assume that everyone has installed the most recent version of Julia (v1.11). If you have an older version installed, we recommend that you install the newer version as well.
 To confirm that Julia is installed, open a Julia window by either running `julia` in the terminal or clicking on the Julia icon in your applications menu. You should see a prompt at the bottom of the new window that looks like this:
 
 ```
@@ -58,7 +26,7 @@ To confirm that Julia is installed, open a Julia window by either running `julia
   (_)     | (_) (_)    |
    _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
   | | | | | | |/ _` |  |
-  | | |_| | | | (_| |  |  Version 1.10.4 (2024-06-04)
+  | | |_| | | | (_| |  |  Version 1.11.6 (2025-07-09)
  _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
 |__/                   |
 julia>
@@ -116,7 +84,7 @@ julia> notebook()
 install Jupyter via Conda, y/n? [y]: 
 ```
 
-If this is successful, a Jupyter tab will open in the default browser on your computer. Click “New” in the top right corner to make a new notebook (if a menu appears, select Julia 1.10.4). A new tab will open with a blank Jupyter notebook.
+If this is successful, a Jupyter tab will open in the default browser on your computer. Click “New” in the top right corner to make a new notebook (if a menu appears, select Julia 1.11). A new tab will open with a blank Jupyter notebook.
 
 
 ## Install Gurobi
@@ -136,15 +104,6 @@ After installing Gurobi, we need to add a Julia package called `Gurobi.jl` that 
 julia> using Pkg
 julia> Pkg.add("Gurobi")
 ```
-You should see something similar to the following. Note that `Gurobi_jll` (binaries for Gurobi) is automatically added to the current Julia version:
-```
-   Resolving package versions...
-    Updating `~/.julia/environments/v1.10/Project.toml`
-  [2e9cd046] + Gurobi v1.3.0
-    Updating `~/.julia/environments/v1.10/Manifest.toml`
-  [2e9cd046] + Gurobi v1.3.0
-  [c018c7e6] + Gurobi_jll v11.0.2+2 
-```
 
 If the Gurobi package is successfully installed in Julia, run the following lines:
 ```julia
@@ -155,14 +114,13 @@ julia> model = Model(Gurobi.Optimizer)
 You should see this output:
 
 ```
-Set parameter Username
-Academic license - for non-commercial use only - expires 2025-XX-XX
+Academic license - for non-commercial use only - expires 2026-XX-XX
 A JuMP Model
-Feasibility problem with:
-Variables: 0
-Model mode: AUTOMATIC
-CachingOptimizer state: EMPTY_OPTIMIZER
-Solver name: Gurobi
+├ solver: Gurobi
+├ objective_sense: FEASIBILITY_SENSE
+├ num_variables: 0
+├ num_constraints: 0
+└ Names registered in the model: none
 ```
 
 
@@ -170,11 +128,11 @@ Solver name: Gurobi
 If you see an error message during this installation, you can try a [manual install](https://github.com/jump-dev/Gurobi.jl?tab=readme-ov-file#manual-installation) of Gurobi (without installing `Gurobi_jll`):
 ```julia
 # On Windows, this might be
-ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi1103\\win64"
+ENV["GUROBI_HOME"] = "C:\\Program Files\\gurobi1203\\win64"
 # ... or perhaps ...
-ENV["GUROBI_HOME"] = "C:\\gurobi1103\\win64"
+ENV["GUROBI_HOME"] = "C:\\gurobi1203\\win64"
 # On Mac, this might be
-ENV["GUROBI_HOME"] = "/Library/gurobi1103/macos_universal2"
+ENV["GUROBI_HOME"] = "/Library/gurobi1203/macos_universal2"
 
 # Opt-out of using Gurobi_jll
 ENV["GUROBI_JL_USE_GUROBI_JLL"] = "false"
@@ -184,8 +142,8 @@ Pkg.add("Gurobi")
 Pkg.build("Gurobi")
 ```
 
-**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 11.0.3. If you have
-a different version, your path may differ (e.g. for Gurobi 10.0.3, replace `gurobi1103` with `gurobi1003`). 
+**Note: check the version of Gurobi that you downloaded. The above instructions assume you downloaded version 12.0.3. If you have
+a different version, your path may differ (e.g. for Gurobi 11.0.3, replace `gurobi1203` with `gurobi1103`). 
 If this doesn't work, also check which folder you installed Gurobi in, and update the path accordingly if necessary.**
 
 
@@ -224,10 +182,6 @@ optimize!(model)
 Now, click the "Run" button to run this code. You should see output similar to the below (for Gurobi):
 
 ```
-Set parameter Username
-Academic license - for non-commercial use only - expires 2025-XX-XX
-Gurobi Optimizer version 11.0.2 build v11.0.2rc0 (mac64[arm] - Darwin 23.5.0 23F79)
-
 CPU model: Apple M2 Pro
 Thread count: 12 physical cores, 12 logical processors, using up to 12 threads
 
@@ -252,7 +206,7 @@ User-callback calls 23, time in user-callback 0.00 sec
 
 Alternatively (for HiGHS):
 ```
-Running HiGHS 1.7.1 (git hash: 43329e528): Copyright (c) 2024 HiGHS under MIT licence terms
+Running HiGHS 1.8.0 (git hash: fcfb53414): Copyright (c) 2024 HiGHS under MIT licence terms
 Coefficient ranges:
   Cost   [1e+00, 1e+00]
   Bound  [0e+00, 0e+00]
@@ -265,7 +219,7 @@ HiGHS run time      :          0.00
 
 We will go through what this printed output means, but if you see something similar, everything is working correctly! If you see errors, one of the steps above may be incomplete. Feel free to email us if you have installation issues.
 
-# 3. Version Control: Git and GitHub
+# 2. Version Control: Git and GitHub
 
 How can we manage complex, code-based workflows? How can we reliably share code between collaborators without syncing issues? How can we track multiple versions of scripts without going crazy? There are multiple solutions to these problems, but *version control* with git is by far the most common. 
 
