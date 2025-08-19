@@ -1,19 +1,17 @@
 # MIT 15.003 | Analytics Tools
 
-Welcome to the repository of 15.003 Analytics Tools, an exciting class at MIT to learn how to use Python, Julia, and R! 
+Welcome to the repository of 15.003 Analytics Tools! 
 You will find all materials and resources for the topics covered in the class. 
 
+- The ```linear_algebra``` section contains a refresher on linear algebra.
+- The ```intro_to_optimization``` section contains an introduction to linear optimization, with examples from the Julia programming language.
 - The ```intro_to_python``` section provides warm-up content for students who are not familiar with Python.
-- The ```intro_to_ml``` section contains an Introduction to Machine Learning in Python.
-- The ```intro_to_deep_learning``` section contains an Introduction to Deep Learning in Python.
-- The ```advanced_deep_learning``` section contains Advanced Deep Learning content, including a python tutorial on transfer learning.
-- The ```julia_jump``` section contains an introduction to the Julia programming language and the JuMP modelling language for solving optimization problems.
-- The ```Orientation``` section covers an introduction to GitHub and R.
+- The ```intro_to_github``` section covers an introduction to GitHub.
 
 Please reach out to us if you have any questions!
 
 Your teaching team,
 
-Yu Ma (midsumer@mit.edu), Sean Lo (seanlo@mit.edu), Vassilina Stompou (vasstou@mit.edu)
+Lisa Everest (leverest@mit.edu), Sean Lo (seanlo@mit.edu)
 
 
